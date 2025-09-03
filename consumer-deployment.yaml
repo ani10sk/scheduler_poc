@@ -21,4 +21,4 @@ spec:
           imagePullPolicy: Never          # 👈 prevent Kubernetes from trying to pull
           env:
             - name: BOOTSTRAP_SERVERS
-              value: "host.docker.internal:9092"
+              value: "host.docker.internal:29092"
