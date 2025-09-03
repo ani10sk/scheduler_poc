@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-consumer
+  namespace: apps
+  labels:
+    app: kafka-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-consumer
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+        - name: consumer
+          image: consumer:1    # 👈 local image
+          imagePullPolicy: Never          # 👈 prevent Kubernetes from trying to pull
+          env:
+            - name: BOOTSTRAP_SERVERS
+              value: "kafka:9092"
