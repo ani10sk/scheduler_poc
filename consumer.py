@@ -3,7 +3,7 @@ from loguru import logger
 import json
 import os
 
-bootstrap_servers = os.getenv("BOOTSTRAP_SERVERS", "localhost:9092")
+bootstrap_servers = os.getenv("BOOTSTRAP_SERVERS", "localhost:30092")
 
 consumer = KafkaConsumer(
     'test-topic',                           # topic name

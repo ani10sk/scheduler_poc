@@ -4,7 +4,7 @@ import time
 from loguru import logger
 import os
 
-bootstrap_servers = os.getenv("BOOTSTRAP_SERVERS", "localhost:9092")
+bootstrap_servers = os.getenv("BOOTSTRAP_SERVERS", "localhost:30092")
 
 
 producer = KafkaProducer(
